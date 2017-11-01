@@ -14,6 +14,38 @@ var friendsArray = [
       4,
       1
     ]
+},
+{
+  name: "Nic",
+  photo: "blahblah",
+  scores:[
+  4,
+  2,
+  4,
+  5,
+  5,
+  4,
+  2,
+  3,
+  4,
+  2
+  ]
+},
+{
+  name: "Richard",
+  photo: "beer",
+  scores: [
+  3,
+  3,
+  3,
+  3,
+  3,
+  3,
+  3,
+  3,
+  4,
+  4
+  ]
 }
 ];
 

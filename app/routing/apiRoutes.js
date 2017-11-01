@@ -18,29 +18,36 @@ app.post("/api/people", function (req, res){
 	var userData = req.body;
 	var userScores = userData.scores;
 
-	var currentPerson;
+	var totalDifference;
 
-	//this will capture all scores of people currently in the db BEFORE the user info is sent
+
+
 	for (i = 0; i < personData.length; i++){
-		currentPerson = personData[i];
+		var currentPerson = personData[i];
+		totalDifference = 0;
+
 		console.log(currentPerson.name);
 
-		
+		currentPerson.scores.forEach(function(data){
+			var currentPersonScore = currentPerson.scores;
+			var currentUserScore = userScores;
+
+			totalDifference += Math.abs(parseInt(currentUserScore) - parseInt(currentPersonScore));
+		})
+
+		if (totalDifference <= newFriend.scores) {
+			newFriend.name = currentPerson.name;
+			newFriend.photo = currentPerson.photo;
+			newFriend.scores = totalDifference;
+		}
+
 	}
 
-	
-
-
-
-
-
 	personData.push(req.body);
-	console.log(personData);
-	console.log(userScores);
+	
+	console.log('Your new best friend is... ' + newFriend.name);
 
-
-
-
+	res.end(newFriend.name);
 
 });
 

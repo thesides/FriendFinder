@@ -1,6 +1,5 @@
 var personData = require("../data/friends.js")
 
-
 module.exports = function (app){
 
 app.get("/api/people", function(req, res) {
@@ -37,7 +36,7 @@ app.post("/api/people", function (req, res){
 
 	personData.push(req.body);
 	console.log(personData);
-	//console.log(userScores);
+	console.log(userScores);
 
 
 
